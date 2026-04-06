@@ -13,7 +13,7 @@ on:
   workflow_dispatch:
 
 env:
-  PHP_VERSION: 8.4
+  PHP_VERSION: 8.2
   MICRO_VERSION: 8.4.11
 
 jobs:
@@ -52,7 +52,7 @@ jobs:
           tools: composer:v2
           php-version: "${{ env.PHP_VERSION }}"
           ini-values: memory_limit=-1
-          extensions: curl, openssl, mbstring
+          extensions: apcu,bcmath,bz2,calendar,ctype,curl,dba,dom,event,exif,fileinfo,filter,ftp,gd,gmp,iconv,imagick,imap,intl,mbregex,mbstring,mysqli,mysqlnd,opcache,openssl,opentelemetry,pcntl,pdo,pdo_mysql,pgsql,phar,posix,protobuf,readline,redis,session,shmop,simplexml,soap,sockets,sodium,sqlite3,swoole,swoole-hook-mysql,swoole-hook-pgsql,swoole-hook-sqlite,sysvmsg,sysvsem,sysvshm,tokenizer,xml,xmlreader,xmlwriter,xsl,zip,zlib,ffi
 
       - name: "Get Composer Cache Directory"
         id: composer-cache
